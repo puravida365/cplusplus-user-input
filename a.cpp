@@ -6,24 +6,40 @@ Source: C++ Programming - From problem design to problem Analysis 5th Edition
 #include <iostream>
 using namespace std;
 
+class UserProfile{
+    private:
+        string firstName;
+        string lastName;
+        int age;
+        double weight;
+
+    public:
+        void intro(){
+            cout << "Enter first name, last name, age, "
+            << "and weight, separated by spaces."
+            << endl;
+
+        }
+        void getInfo(){
+            cin >> firstName >> lastName;
+            cin >> age >> weight;
+
+        }
+        void printInfo(){
+            cout << "Name: " << firstName << " " 
+            << lastName << endl;
+            cout << "Age: " << age << endl;
+            cout << "Weight: " << weight << endl;
+        }
+
+};
+
 int main(){
-    string firstName;
-    string lastName;
-    int age;
-    double weight;
 
-    cout << "Enter first name, last name, age, "
-         << "and weight, separated by spaces."
-         << endl;
-
-    cin >> firstName >> lastName;
-    cin >> age >> weight;
-
-    cout << "Name: " << firstName << " " 
-         << lastName << endl;
-
-    cout << "Age: " << age << endl;
-    cout << "Weight: " << weight << endl;
+    UserProfile A;
+    A.intro();
+    A.getInfo();
+    A.printInfo();
 
     return(0);
 }
